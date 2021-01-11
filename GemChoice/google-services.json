@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "382682637867",
+    "firebase_url": "https://gemchioce-default-rtdb.firebaseio.com",
+    "project_id": "gemchioce",
+    "storage_bucket": "gemchioce.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:382682637867:android:6a1a2cadb57a7e1ae1ec6e",
+        "android_client_info": {
+          "package_name": "GemChoice.com"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "382682637867-5jgve0qu7dug1mm5khtarbtd21vm7qod.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDsVOsqpouyYjJxDhQWYlsfSdofANw_eS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "382682637867-5jgve0qu7dug1mm5khtarbtd21vm7qod.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "382682637867-i25n4gjo3pufm5qpfalon3uotes71ee5.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "GemChoice.com"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
