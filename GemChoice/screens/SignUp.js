@@ -37,7 +37,7 @@ export default function SignUp() {
     }, []);
 
     return (
-        <View>
+        <View style={styles.container}>
             <InputTextComponent placeholder={'Firstname'} />
             <InputTextComponent placeholder={'Lastname'} />
             <InputTextComponent placeholder={'Username'} />

@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
-import { View, Text, TextInput } from 'react-native'
+import { View, Text } from 'react-native'
+
 
 export default function Home() {
-    const [text, setText] = useState('')
+    const [text, setText] = useState('');
 
     return (
         <View>

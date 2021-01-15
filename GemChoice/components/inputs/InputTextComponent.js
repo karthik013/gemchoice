@@ -9,7 +9,7 @@ export default function InputTextComponent({ placeholder, setValue }) {
             style={styles.input}
             value={text}
             placeholder={placeholder}
-            onChangeText={(value) => setText(value)}
+            onChangeText={(value) => { setText(value); setValue(value) }}
         />
     )
 }

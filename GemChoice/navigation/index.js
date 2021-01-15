@@ -5,15 +5,40 @@ import * as React from 'react';
 import HomeBottomTabNavigator from './HomeBottomTabNavigator';
 import LoginBottomTabNavigator from './LoginBottomTabNavigator';
 import LinkingConfiguration from './LinkingConfiguration';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
 // If you are not familiar with React Navigation, we recommend going through the
 // "Fundamentals" guide: https://reactnavigation.org/docs/getting-started
 export default function Navigation({ colorScheme }) {
+
+  const getLoggedUser = async () => {
+    const { getItem, setItem } = useAsyncStorage('@localUser');
+    const ll = await getItem();
+    alert(ll);
+    console.log('loggeduser' + ll)
+    if (ll === null || ll === undefined) {
+      return false;
+    } else {
+      return true;
+    }
+  };
+
+  const tt = async () => {
+    const ii = await getLoggedUser();
+    if (ii === undefined) {
+      console.log('ee');
+      return false;
+    } else {
+      console.log('s');
+      return true;
+    }
+  }
+
   return (
     <NavigationContainer
       linking={LinkingConfiguration}//TODO: need to change it
       theme={colorScheme === 'dark' ? DarkTheme : DefaultTheme}>
-      {(false) ? <HomeStackScreen /> : <LoginStackScreen />}
+      <HomeStackScreen />
     </NavigationContainer>
   );
 }

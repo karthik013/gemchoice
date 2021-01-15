@@ -4,38 +4,33 @@ import { StyleSheet, Image } from 'react-native'
 import InputTextComponent from '../components/inputs/InputTextComponent'
 import SubmitButton from './../components/buttons/SubmitButton'
 import { View } from '../components/Themed';
+import { useAsyncStorage } from '@react-native-async-storage/async-storage';
 
-export default function SignIn() {
+export default function SignIn({ navigation }) {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const onLoginPress = () => {
+
+    const onLoginPress = async () => {
         alert(username + '-' + password);
+        const { getItem, setItem } = useAsyncStorage('@localUser');
+        //setItem('calleddd')
+        //setUser
+        // const rr = await getItem();
+        // alert(rr);
+        // console.log(rr);
         firebase
             .auth()
             .signInWithEmailAndPassword('karthik013mail@gmail.com', 'karthik013')
-            .then((response) => {
-                alert('loginsuccessful');
-                //     const uid = response.user.uid
-                //     const usersRef = firebase.firestore().collection('users')
-                //     usersRef
-                //         .doc(uid)
-                //         .get()
-                //         .then(firestoreDocument => {
-                //             if (!firestoreDocument.exists) {
-                //                 alert("User does not exist anymore.")
-                //                 return;
-                //             }
-                //             const user = firestoreDocument.data()
-                //             navigation.navigate('Home', { user })
-                //         })
-                //         .catch(error => {
-                //             alert(error)
-                //         });
+            .then((user) => {
+                alert('login successful');
+                //console.log(user);
+                setItem('karthik013mail@gmail.com')
+                navigation.navigate('Home')
             })
             .catch(error => {
-                alert(error)
-            })
+                alert(error.message)
+            });
     };
 
     return (
